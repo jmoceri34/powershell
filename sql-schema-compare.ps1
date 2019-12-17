@@ -7,7 +7,7 @@ param(
 	[Parameter(Mandatory=$true)][string]$xmlOutputPath
 )
 
-if (-not [string]::IsNullOrWhiteSpace($projectPath))
+if ([string]::IsNullOrWhiteSpace($projectPath))
 {
 	$projectPath = Resolve-Path *.sqlproj | select -ExpandProperty Path
 }
